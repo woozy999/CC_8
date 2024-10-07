@@ -34,3 +34,18 @@ class Department {
         return this.employees.reduce((total, employee) => total + employee.salary, 0);
     }
 }
+
+//task 3
+
+//create manager class & details
+class Manager extends Employee {
+    constructor(name, salary, position, department, bonus) {
+        super(name, salary, position, department);
+        this.bonus = bonus;
+    }
+
+    getDetails() {
+        return `Name: ${this.name}, position: ${this.position}, salary: $${this.salary}, bonus: $${this.bonus}`;
+    }
+}
+
