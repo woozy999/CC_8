@@ -18,8 +18,8 @@ class Employee {
 
 //task 2
 
-
 //make department class & add employee
+
 class Department {
     constructor(name) {
         this.name = name;
@@ -33,7 +33,20 @@ class Department {
     getDepartmentSalary() {
         return this.employees.reduce((total, employee) => total + employee.salary, 0);
     }
+
+//task 4 (updated code to handle bonuses)
+
+    calculateTotalSalaryWithBonus() {
+        return this.employees.reduce((total, employee) => {
+            let totalSalary = total + employee.salary;
+            if (employee instanceof Manager) {
+                totalSalary += employee.bonus;
+            }
+            return totalSalary;
+        }, 0);
+    }
 }
+
 
 //task 3
 
